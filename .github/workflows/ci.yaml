@@ -37,7 +37,7 @@ jobs:
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Export Repository
-        run: ./aptly publish repo repo
+        run: ./aptly publish repo -architectures=amd64 repo
 
       - name: Copy README.md
         run: cp README.md ~/.aptly/public/README.md

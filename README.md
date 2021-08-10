@@ -34,3 +34,7 @@ sudo apt-add-repository "deb http://deb.m4rc3l.de all main"
 | Package | Description | Reposetory |
 |---------|-------------|------------|
 | `genpw` | Generate strong passwords directly from the command line. | [MarcelCoding/debian-genpw](https://github.com/MarcelCoding/debian-genpw) |
+
+## License
+
+[LICENSE](LICENSE)

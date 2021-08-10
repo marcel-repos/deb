@@ -40,7 +40,9 @@ jobs:
         run: ./aptly publish repo -architectures=amd64 repo
 
       - name: Copy README.md
-        run: cp README.md ~/.aptly/public/README.md
+        run: |
+          cp README.md ~/.aptly/public/README.md
+          cp LICENSE ~/.aptly/public/LICENSE
 
       - name: Deploy Repository
         uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -48,6 +50,8 @@ jobs:
           branch: gh-pages
           folder: ~/.aptly/public
           clean: false
+          clean-exclude: |
+            CNAME
 
           token: ${{ github.token }}
           # https://github.com/crazy-max/ghaction-github-pages/blob/dev/src/git.ts#L3-L8

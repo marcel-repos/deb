@@ -2,7 +2,17 @@
 
 ## Setup
 
-First you need to import the GPG public key:
+First you need to install some requirements:
+```bash
+sudo apt-get update
+
+sudo apt-get install \
+  apt-transport-https \
+  ca-certificates \
+  wget
+```
+
+After that you need to import the public GPG key:
 ```bash
 wget -qO - https://m4rc3l.de/static/deb-repo.pem | sudo apt-key add -
 ```

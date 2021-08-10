@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  APTLY_VERSION: 1.4.0
+
+jobs:
+  deb-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Aptly
+        run: |
+          wget -O aptly.tar.gz https://github.com/aptly-dev/aptly/releases/download/v${{ env.APTLY_VERSION }}/aptly_${{ env.APTLY_VERSION }}_linux_amd64.tar.gz
+          tar xzf aptly.tar.gz --strip-components=1
+          chmod +x aptly
+
+      - name: Create Repository
+        run: ./aptly repo create -distribution=all -component=main repo
+
+      - name: Add .deb files      
+        run: ./aptly repo add repo .
+
+      - name: Validate Repository  
+        run: ./aptly repo show -with-packages repo
+
+      - name: Import GPG Key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v3
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Export Repository
+        run: ./aptly publish repo repo
+
+      - name: Copy README.md
+        run: cp README.md ~/.aptly/public/README.md
+
+      - name: Deploy Repository
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: ~/.aptly/public
+          clean: false
+
+          token: ${{ github.token }}
+          # https://github.com/crazy-max/ghaction-github-pages/blob/dev/src/git.ts#L3-L8
+          commit-message: Deploy ${{ github.repository }}
+          git-config-name: GitHub <noreply@github.com>
+          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com

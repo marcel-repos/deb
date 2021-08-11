@@ -4,9 +4,9 @@
 
 First you need to install some requirements:
 ```bash
-sudo apt-get update
+sudo apt update
 
-sudo apt-get install \
+sudo apt install \
   apt-transport-https \
   ca-certificates \
   wget
@@ -17,7 +17,7 @@ After that you need to import the public GPG key:
 wget -qO - https://m4rc3l.de/static/deb-repo.pem | sudo apt-key add -
 ```
 
-Now verify the GPG public key fingerprint.
+Now verify the public GPG key fingerprint.
 <br>
 The fingerprint should be `B0B1 DC86 8FF8 2295 E5D5  D338 3D7B FEF0 C780 7326`.
 ```bash
@@ -26,10 +26,14 @@ apt-key list
 
 After that is finished you need to add the package list:
 ```bash
-sudo apt-add-repository "deb http://deb.m4rc3l.de all main"
+sudo apt-add-repository "deb http://deb.m4rc3l.de/ all main"
 ```
 
 ## Packages
+
+```bash
+sudo apt install <package>
+```
 
 | Package | Description | Reposetory |
 |---------|-------------|------------|

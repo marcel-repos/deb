@@ -48,7 +48,7 @@ jobs:
         with:
           branch: gh-pages
           folder: ~/.aptly/public
-          clean: false
+          clean: true
           clean-exclude: |
             CNAME
 

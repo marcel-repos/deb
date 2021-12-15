@@ -44,7 +44,7 @@ jobs:
           cp LICENSE ~/.aptly/public/LICENSE
 
       - name: Deploy Repository
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           repository-name: ${{ github.repository_owner }}/deb.m4rc3l.de
           branch: main
@@ -54,5 +54,5 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           # https://github.com/crazy-max/ghaction-github-pages/blob/dev/src/git.ts#L3-L8
           commit-message: Deploy ${{ github.repository }}
-          git-config-name: GitHub <noreply@github.com>
+          git-config-name: GitHub
           git-config-email: 41898282+github-actions[bot]@users.noreply.github.com

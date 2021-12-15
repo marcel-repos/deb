@@ -40,20 +40,17 @@ jobs:
 
       - name: Copy README.md
         run: |
-          cp README.md ~/.aptly/public/README.md
+          cp _redirects ~/.aptly/public/_redirects
           cp LICENSE ~/.aptly/public/LICENSE
-          cp robots.txt ~/.aptly/public/robots.txt
 
       - name: Deploy Repository
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           repository-name: ${{ github.repository_owner }}/deb.m4rc3l.de
-          branch: gh-pages
+          branch: main
           folder: ~/.aptly/public
           clean: true
-          clean-exclude: |
-            _redirects
-            LICENSE
+          single-commit: true
 
           token: ${{ secrets.GH_PAT }}
           # https://github.com/crazy-max/ghaction-github-pages/blob/dev/src/git.ts#L3-L8

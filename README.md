@@ -43,10 +43,11 @@ sudo apt update
 sudo apt install <package>
 ```
 
-| Package                 | Description                                               | Reposetory                                                                                  |
-| ----------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `genpw`                 | Generate strong passwords directly from the command line. | [MarcelCoding/debian-genpw](https://github.com/MarcelCoding/debian-genpw)                   |
-| `docker-network-viewer` | Liste docker networks and according subnet.               | [MarcelCoding/docker-network-viewer](https://github.com/MarcelCoding/docker-network-viewer) |
+| Package                 | Description                                               | Reposetory                                            |
+| ----------------------- | --------------------------------------------------------- | ----------------------------------------------------- |
+| `genpw`                 | Generate strong passwords directly from the command line. | https://github.com/MarcelCoding/debian-genpw          |
+| `docker-network-viewer` | Liste docker networks and according subnet.               | https://github.com/MarcelCoding/docker-network-viewer |
+| `status-node`           | Worker for https://github.com/themorpheustutorials/status | https://github.com/MarcelCoding/status-node           |
 
 ## License
 

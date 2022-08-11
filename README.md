@@ -17,7 +17,7 @@ sudo apt install \
 After that you need to import the public GPG key:
 
 ```bash
-curl -fsSL https://m4rc3l.de/static/deb-repo.pem | sudo gpg --dearmor -o /usr/share/keyrings/m4rc3l-deb-keyring.gpg
+curl -fsSL https://m4rc3l.de/deb-repo.pem | sudo gpg --dearmor -o /usr/share/keyrings/m4rc3l-deb-keyring.gpg
 ```
 
 Now verify the public GPG key fingerprint.

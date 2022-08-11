@@ -43,11 +43,13 @@ sudo apt update
 sudo apt install <package>
 ```
 
-| Package                 | Description                                               | Reposetory                                            |
-| ----------------------- | --------------------------------------------------------- | ----------------------------------------------------- |
-| `genpw`                 | Generate strong passwords directly from the command line. | https://github.com/MarcelCoding/debian-genpw          |
-| `docker-network-viewer` | Liste docker networks and according subnet.               | https://github.com/MarcelCoding/docker-network-viewer |
-| `status-node`           | Worker for https://github.com/themorpheustutorials/status | https://github.com/MarcelCoding/status-node           |
+| Package                 | Description                                                                | Reposetory                                            |
+| ----------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `genpw`                 | Generate strong passwords directly from the command line.                  | https://github.com/MarcelCoding/debian-genpw          |
+| `docker-network-viewer` | Liste docker networks and according subnet.                                | https://github.com/MarcelCoding/docker-network-viewer |
+| `status-node`           | Worker for https://github.com/themorpheustutorials/status                  | https://github.com/MarcelCoding/status-node           |
+| `zia-client`            | Proxy udp over websocket, useful to use Wireguard in restricted networks.  | https://github.com/MarcelCoding/zia                   |
+| `zia-server`            | Proxy udp over websocket, useful to use Wireguard in restricted networks.  | https://github.com/MarcelCoding/zia                   |
 
 ## License
 

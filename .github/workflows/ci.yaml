@@ -44,7 +44,7 @@ jobs:
           cp LICENSE ~/.aptly/public/LICENSE
 
       - name: Deploy Repository
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           repository-name: ${{ github.repository_owner }}/deb.m4rc3l.de
           branch: main
